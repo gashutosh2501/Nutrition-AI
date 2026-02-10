@@ -109,3 +109,30 @@ API should be available at `http://localhost:8000`.
    - `npm run dev`
 
 Frontend should be available at `http://localhost:5173`.
+
+# Email Configuration (Important)
+
+This application sends a **daily nutrition summary email** once a user has logged **breakfast, lunch, and dinner** for the day.
+
+## Required setup
+
+The recipient email address is currently **hard-coded** in the backend and must be updated before running the app.
+
+**File to edit:** `backend/agents/nutrition_agent.py`
+
+**Current code:**
+
+- `to="g.ashutosh2502@gmail.com"`
+
+## What you need to do
+
+Replace the email with your own:
+
+- `to="your-email@example.com"`
+
+Once dinner is recorded, the app will automatically send the daily nutrition summary to this email.
+
+## Note
+
+This is a **temporary setup**. In production, the email should be fetched dynamically from the authenticated user profile instead of being hard-coded.
+
